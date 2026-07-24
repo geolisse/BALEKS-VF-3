@@ -1,0 +1,20 @@
+{
+  "name": "balek-pets-vf",
+  "version": "3.0.0",
+  "private": true,
+  "description": "BalekPets, bot Discord Tamagotchi avec boutique Pink Studio, elevage et dressing multi-especes.",
+  "type": "module",
+  "main": "index.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "node scripts/deploy-commands.js",
+    "check": "node --check index.js && node --check src/bot.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "discord.js": "^14.22.1",
+    "dotenv": "^16.6.1",
+    "sharp": "^0.34.4"
+  }
+}

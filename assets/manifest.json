@@ -1,0 +1,710 @@
+{
+  "version": 2,
+  "notes": [
+    "Le doublon de chaussures noires du Buffalek a été retiré.",
+    "Le nœud rose du Cocobalek fait partie de son apparence classique et ne constitue pas un objet séparé.",
+    "Cervalek et Dinobalek sont prévus mais sans assets jouables dans cette version."
+  ],
+  "items": [
+    {
+      "dest": "lieux/burrata_academy.jpg",
+      "id": "lieu_burrata_academy",
+      "name": "Burrata Academy",
+      "species": "all",
+      "slot": "location",
+      "price": 0,
+      "default": true,
+      "source_original": "lieux/78250872_1784731752819771.jpg"
+    },
+    {
+      "dest": "lieux/foret_des_turpitudes.jpg",
+      "id": "lieu_foret_turpitudes",
+      "name": "Forêt des Turpitudes",
+      "species": "all",
+      "slot": "location",
+      "price": 1000,
+      "default": false,
+      "source_original": "lieux/534870806_1784728564657281.jpg"
+    },
+    {
+      "dest": "cocobalek/base/cocobalek_classique.png",
+      "id": "base_cocobalek",
+      "name": "Cocobalek classique",
+      "species": "cocobalek",
+      "slot": "base",
+      "price": 0,
+      "default": true,
+      "source_original": "cocobalek/White_chick_waving_wing_cheerfully_202607211000.png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_alv_alm.png",
+      "id": "coco_tenue_alv_alm",
+      "name": "Tenue ALV ALM",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 1200,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (1).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_grand_mere_balek.png",
+      "id": "coco_tenue_grand_mere",
+      "name": "Tenue de Grand-mère Balek",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 800,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (11).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_philosophe.png",
+      "id": "coco_tenue_philosophe",
+      "name": "Tenue de Philosophe",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 900,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (12).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_hop_hop_escalope.png",
+      "id": "coco_tenue_hop_hop",
+      "name": "Tenue Hop Hop Escalope",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 950,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (4).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_bachatero.png",
+      "id": "coco_tenue_bachatero",
+      "name": "Tenue Bachatero",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 900,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (9).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_grand_pere_balek.png",
+      "id": "coco_tenue_grand_pere",
+      "name": "Tenue de Grand-père Balek",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 850,
+      "default": false,
+      "source_original": "cocobalek/407062308_1784646051562323 (4).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_champignons_aurore.png",
+      "id": "coco_tenue_champignons",
+      "name": "Tenue Champignons Aurore",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "cocobalek/407062308_1784646051562323 (6).png"
+    },
+    {
+      "dest": "cocobalek/tenues/tenue_rebelle_pink_studio.png",
+      "id": "coco_tenue_rebelle_pink",
+      "name": "Tenue Rebelle Pink Studio",
+      "species": "cocobalek",
+      "slot": "tenue",
+      "price": 1100,
+      "default": false,
+      "source_original": "cocobalek/407062308_1784646051562323 (7).png"
+    },
+    {
+      "dest": "cocobalek/coiffes/chapeau_hop_hop_escalope.png",
+      "id": "coco_coiffe_hop_hop",
+      "name": "Chapeau Hop Hop Escalope",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 500,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (3).png"
+    },
+    {
+      "dest": "cocobalek/coiffes/coiffure_puant.png",
+      "id": "coco_coiffe_puant",
+      "name": "Coiffure Puant",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 400,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (5).png"
+    },
+    {
+      "dest": "cocobalek/coiffes/vieille_coiffure.png",
+      "id": "coco_coiffe_vieille",
+      "name": "Vieille Coiffure",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 400,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (7).png"
+    },
+    {
+      "dest": "cocobalek/coiffes/chapeau_champignons_aurore.png",
+      "id": "coco_coiffe_champignons_grand",
+      "name": "Chapeau Champignons Aurore",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 550,
+      "default": false,
+      "source_original": "cocobalek/407062308_1784646051562323.png"
+    },
+    {
+      "dest": "cocobalek/coiffes/petits_champignons_aurore.png",
+      "id": "coco_coiffe_champignons_petits",
+      "name": "Petits Champignons Aurore",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 550,
+      "default": false,
+      "source_original": "cocobalek/407062308_1784646051562323 (2).png"
+    },
+    {
+      "dest": "cocobalek/coiffes/chapeau_elegant.png",
+      "id": "coco_coiffe_elegant",
+      "name": "Chapeau Élégant",
+      "species": "cocobalek",
+      "slot": "coiffe",
+      "price": 500,
+      "default": false,
+      "source_original": "cocobalek/White_chick_waving_wing_cheerfully_202607211000_1.png"
+    },
+    {
+      "dest": "cocobalek/visages/lunettes_uesh.png",
+      "id": "coco_visage_lunettes_uesh",
+      "name": "Lunettes Uesh ❤️‍🔥",
+      "species": "cocobalek",
+      "slot": "visage",
+      "price": 450,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (10).png"
+    },
+    {
+      "dest": "cocobalek/visages/fuck_monocle.png",
+      "id": "coco_visage_fuck_monocle",
+      "name": "Fuck Monocle",
+      "species": "cocobalek",
+      "slot": "visage",
+      "price": 650,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (2).png"
+    },
+    {
+      "dest": "cocobalek/visages/masque_alv_alm.png",
+      "id": "coco_visage_masque_alv_alm",
+      "name": "Masque ALV ALM",
+      "species": "cocobalek",
+      "slot": "visage",
+      "price": 600,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523.png"
+    },
+    {
+      "dest": "cocobalek/accessoires/canne_de_papi.png",
+      "id": "coco_accessoire_canne_papi",
+      "name": "Canne de papi",
+      "species": "cocobalek",
+      "slot": "accessoire",
+      "price": 450,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (6).png"
+    },
+    {
+      "dest": "cocobalek/accessoires/rose_de_danse.png",
+      "id": "coco_accessoire_rose_danse",
+      "name": "Rose de danse",
+      "species": "cocobalek",
+      "slot": "accessoire",
+      "price": 350,
+      "default": false,
+      "source_original": "cocobalek/178873530_1784645324817523 (8).png"
+    },
+    {
+      "dest": "buffalek/base/buffalek_classique.png",
+      "id": "base_buffalek",
+      "name": "Buffalek classique",
+      "species": "buffalek",
+      "slot": "base",
+      "price": 0,
+      "default": true,
+      "source_original": "buffalek/78250872_1784731752819771.png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_pirate.png",
+      "id": "buffa_tenue_pirate",
+      "name": "Tenue Pirate",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1200,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (10).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_champignons_aurore.png",
+      "id": "buffa_tenue_champignons",
+      "name": "Tenue Champignons Aurore",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (11).png"
+    },
+    {
+      "dest": "buffalek/tenues/armure_gardien_balek.png",
+      "id": "buffa_tenue_gardien",
+      "name": "Armure du Gardien Balek",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1300,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (12).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_diva_balek.png",
+      "id": "buffa_tenue_diva",
+      "name": "Tenue Diva Balek",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (2).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_prince_nocturne.png",
+      "id": "buffa_tenue_prince_nocturne",
+      "name": "Tenue du Prince Nocturne",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1100,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (20).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_pink_lady.png",
+      "id": "buffa_tenue_pink_lady",
+      "name": "Tenue Pink Lady",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (3).png"
+    },
+    {
+      "dest": "buffalek/tenues/armure_lumivolt.png",
+      "id": "buffa_tenue_lumivolt",
+      "name": "Armure Lumivolt",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1400,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (6).png"
+    },
+    {
+      "dest": "buffalek/tenues/armure_meca_balek.png",
+      "id": "buffa_tenue_meca",
+      "name": "Armure Méca-Balek",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 1500,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (7).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_grand_pere_balek.png",
+      "id": "buffa_tenue_grand_pere",
+      "name": "Tenue de Grand-père Balek",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 900,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (9).png"
+    },
+    {
+      "dest": "buffalek/tenues/tenue_victime_turpitudes.png",
+      "id": "buffa_tenue_victime",
+      "name": "Tenue Victime des Turpitudes",
+      "species": "buffalek",
+      "slot": "tenue",
+      "price": 750,
+      "default": false,
+      "source_original": "buffalek/tenue victime.png"
+    },
+    {
+      "dest": "buffalek/cornes/cornes_ancestrales.png",
+      "id": "buffa_cornes_ancestrales",
+      "name": "Cornes Ancestrales",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 500,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (13).png"
+    },
+    {
+      "dest": "buffalek/cornes/cornes_meca_balek.png",
+      "id": "buffa_cornes_meca",
+      "name": "Cornes Méca-Balek",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 650,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (14).png"
+    },
+    {
+      "dest": "buffalek/cornes/colere_de_celine.png",
+      "id": "buffa_cornes_colere_celine",
+      "name": "Colère de Céline",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 800,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (15).png"
+    },
+    {
+      "dest": "buffalek/cornes/corne_fuck.png",
+      "id": "buffa_cornes_fuck",
+      "name": "Corne Fuck",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 800,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (16).png"
+    },
+    {
+      "dest": "buffalek/cornes/cornes_noyau_discordant.png",
+      "id": "buffa_cornes_noyau",
+      "name": "Cornes du Noyau Discordant",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 750,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (23).png"
+    },
+    {
+      "dest": "buffalek/cornes/cornes_pink_studio.png",
+      "id": "buffa_cornes_pink",
+      "name": "Cornes Pink Studio",
+      "species": "buffalek",
+      "slot": "cornes",
+      "price": 600,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (4).png"
+    },
+    {
+      "dest": "buffalek/chaussures/patins_lumivolt.png",
+      "id": "buffa_chaussures_patins",
+      "name": "Patins Lumivolt",
+      "species": "buffalek",
+      "slot": "chaussures",
+      "price": 500,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (17).png"
+    },
+    {
+      "dest": "buffalek/chaussures/chaussures_elegantes.png",
+      "id": "buffa_chaussures_elegantes",
+      "name": "Chaussures Élégantes",
+      "species": "buffalek",
+      "slot": "chaussures",
+      "price": 400,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (18).png"
+    },
+    {
+      "dest": "buffalek/chaussures/baskets_pink_studio.png",
+      "id": "buffa_chaussures_pink",
+      "name": "Baskets Pink Studio",
+      "species": "buffalek",
+      "slot": "chaussures",
+      "price": 450,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (5).png"
+    },
+    {
+      "dest": "buffalek/accessoires/boucle_oreille_10_metres.png",
+      "id": "buffa_accessoire_boucle_10m",
+      "name": "Boucle d'oreille de 10 mètres",
+      "species": "buffalek",
+      "slot": "accessoire",
+      "price": 650,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (19).png"
+    },
+    {
+      "dest": "buffalek/accessoires/museau_brasier.png",
+      "id": "buffa_accessoire_museau_brasier",
+      "name": "Museau Brasier",
+      "species": "buffalek",
+      "slot": "accessoire",
+      "price": 500,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (21).png"
+    },
+    {
+      "dest": "buffalek/accessoires/verrue_de_sorciere.png",
+      "id": "buffa_accessoire_verrue",
+      "name": "Verrue de sorcière",
+      "species": "buffalek",
+      "slot": "accessoire",
+      "price": 350,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (24).png"
+    },
+    {
+      "dest": "buffalek/accessoires/masque_buffacitrouille.png",
+      "id": "buffa_accessoire_buffacitrouille",
+      "name": "Masque Buffacitrouille",
+      "species": "buffalek",
+      "slot": "accessoire",
+      "price": 550,
+      "default": false,
+      "source_original": "buffalek/78250872_1784731752819771 (25).png"
+    },
+    {
+      "dest": "volpek/base/volpek_classique.png",
+      "id": "base_volpek",
+      "name": "Volpek classique",
+      "species": "volpek",
+      "slot": "base",
+      "price": 0,
+      "default": true,
+      "source_original": "Volpek/1915676_1784816481891756.png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_royale_lumivolt.png",
+      "id": "volpek_tenue_royale",
+      "name": "Tenue Royale Lumivolt",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1300,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (1).png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_ministere_balek.png",
+      "id": "volpek_tenue_ministere",
+      "name": "Tenue du Ministère Balek",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1100,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (2).png"
+    },
+    {
+      "dest": "volpek/tenues/armure_meca_volpek.png",
+      "id": "volpek_tenue_meca",
+      "name": "Armure Méca-Volpek",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1500,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (15).png"
+    },
+    {
+      "dest": "volpek/tenues/uniforme_brigade_balek.png",
+      "id": "volpek_tenue_brigade",
+      "name": "Uniforme de la Brigade Balek",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (17).png"
+    },
+    {
+      "dest": "volpek/tenues/collab_aurore_la_belge.png",
+      "id": "volpek_tenue_aurore_belge",
+      "name": "Collab Aurore la Belge",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1100,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (3).png"
+    },
+    {
+      "dest": "volpek/tenues/serveur_de_bibilekium.png",
+      "id": "volpek_tenue_serveur_bibilekium",
+      "name": "Serveur de Bibilekium",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (4).png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_pink_studio.png",
+      "id": "volpek_tenue_pink_studio",
+      "name": "Tenue Pink Studio",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1050,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (5).png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_uesh_cosmique.png",
+      "id": "volpek_tenue_uesh",
+      "name": "Tenue Uesh Cosmique",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1100,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (6).png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_alv_alm.png",
+      "id": "volpek_tenue_alv_alm",
+      "name": "Tenue ALV ALM",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1200,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (7).png"
+    },
+    {
+      "dest": "volpek/tenues/tenue_egyptienne.png",
+      "id": "volpek_tenue_egyptienne",
+      "name": "Tenue égyptienne",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1200,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (8).png"
+    },
+    {
+      "dest": "volpek/tenues/danseuse_de_bachata.png",
+      "id": "volpek_tenue_bachata",
+      "name": "Danseuse de bachata",
+      "species": "volpek",
+      "slot": "tenue",
+      "price": 1000,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (9).png"
+    },
+    {
+      "dest": "volpek/visages/masque_du_ministere.png",
+      "id": "volpek_visage_masque_ministere",
+      "name": "Masque du Ministère",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 650,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (10).png"
+    },
+    {
+      "dest": "volpek/visages/horreurs.png",
+      "id": "volpek_visage_horreurs",
+      "name": "Horreurs",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 600,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (13).png"
+    },
+    {
+      "dest": "volpek/visages/plateau_de_bibilekium.png",
+      "id": "volpek_visage_plateau_bibilekium",
+      "name": "Plateau de Bibilekium",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 450,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (14).png"
+    },
+    {
+      "dest": "volpek/visages/coiffure_diva_volpek.png",
+      "id": "volpek_visage_coiffure_diva",
+      "name": "Coiffure Diva Volpek",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 500,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (18).png"
+    },
+    {
+      "dest": "volpek/visages/masque_meca_volpek.png",
+      "id": "volpek_visage_meca",
+      "name": "Masque Méca-Volpek",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 650,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (20).png"
+    },
+    {
+      "dest": "volpek/visages/casquette_brigade_balek.png",
+      "id": "volpek_visage_casquette_brigade",
+      "name": "Casquette de la Brigade Balek",
+      "species": "volpek",
+      "slot": "visage",
+      "price": 400,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (23).png"
+    },
+    {
+      "dest": "volpek/queues/queue_paon_archives.png",
+      "id": "volpek_queue_paon",
+      "name": "Queue Paon des Archives",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 700,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (11).png"
+    },
+    {
+      "dest": "volpek/queues/queue_cristal_lumivolt.png",
+      "id": "volpek_queue_cristal",
+      "name": "Queue Cristal Lumivolt",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 750,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (12).png"
+    },
+    {
+      "dest": "volpek/queues/fuck_cristal.png",
+      "id": "volpek_queue_fuck_cristal",
+      "name": "Fuck Cristal",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 900,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (16).png"
+    },
+    {
+      "dest": "volpek/queues/queue_meca_gatling.png",
+      "id": "volpek_queue_meca_gatling",
+      "name": "Queue Méca-Gatling",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 900,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (19).png"
+    },
+    {
+      "dest": "volpek/queues/pink_kitsun.png",
+      "id": "volpek_queue_pink_kitsun",
+      "name": "Pink Kitsun",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 700,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (21).png"
+    },
+    {
+      "dest": "volpek/queues/queue_dieux_egyptiens.png",
+      "id": "volpek_queue_dieux_egyptiens",
+      "name": "Queue des Dieux égyptiens",
+      "species": "volpek",
+      "slot": "queue",
+      "price": 800,
+      "default": false,
+      "source_original": "Volpek/1915676_1784816481891756 (22).png"
+    }
+  ]
+}
