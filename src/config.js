@@ -7,7 +7,9 @@ export const GAME = Object.freeze({
   messageCooldownMs: 5000,
   careCooldownMs: 60 * 60 * 1000,
   careGain: 20,
-  careXp: 5,
+  careXp: 7,
+  vitalityFullXp: 14,
+  expressXp: 3,
   expressCost: 50,
   expressGain: 10,
   canvasSize: 1024,
@@ -15,11 +17,13 @@ export const GAME = Object.freeze({
 });
 
 export const SPECIES = Object.freeze({
-  cocobalek: { id: 'cocobalek', name: 'Cocobalek', price: 1800, starter: true, emoji: '🐣', description: 'Petit compagnon vif, électrique et très expressif.' },
-  buffalek: { id: 'buffalek', name: 'Buffalek', price: 2600, starter: true, emoji: '🐃', description: 'Une force tranquille au cœur massif.' },
-  volpek: { id: 'volpek', name: 'Volpek', price: 4200, starter: true, emoji: '🦊', description: 'Rapide, élégant et légèrement chapardeur.' },
-  cervobalek: { id: 'cervobalek', name: 'Cervobalek', price: 5200, starter: false, unavailable: true, emoji: '🦌', description: 'Bientôt disponible.' },
-  dinobalek: { id: 'dinobalek', name: 'Dinobalek', price: 8000, starter: false, unavailable: true, emoji: '🦖', description: 'Bientôt disponible.' }
+  cocobalek: { id: 'cocobalek', name: 'Cocobalek', price: 2000, starter: true, emoji: '🐣', description: 'Petit compagnon vif, électrique et très expressif.' },
+  buffalek: { id: 'buffalek', name: 'Buffalek', price: 2000, starter: true, emoji: '🐃', description: 'Une force tranquille au cœur massif.' },
+  volpek: { id: 'volpek', name: 'Volpek', price: 4000, starter: false, emoji: '🦊', description: 'Rapide, élégant et légèrement chapardeur.' },
+  cervobalek: { id: 'cervobalek', name: 'Cervobalek', price: 4000, starter: false, unavailable: true, emoji: '🦌', description: 'Bientôt disponible.' },
+  lutrinabalek: { id: 'lutrinabalek', name: 'Lutrinabalek', price: 6000, starter: false, unavailable: true, emoji: '🦦', description: 'Une loutre Balek malicieuse. Bientôt disponible.' },
+  nheribalek: { id: 'nheribalek', name: 'Nheribalek', price: 6000, starter: false, unavailable: true, emoji: '🦔', description: 'Un hérisson Balek. Bientôt disponible.' },
+  dinobalek: { id: 'dinobalek', name: 'Dinobalek', price: 8000, starter: false, unavailable: true, emoji: '🦖', description: 'Plusieurs races de Dinobaleks arriveront bientôt.' }
 });
 
 export const SLOT_DEFS = Object.freeze({

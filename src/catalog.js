@@ -4,10 +4,15 @@ import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const manifest = JSON.parse(fs.readFileSync(path.resolve(here, '../assets/manifest.json'), 'utf8'));
+const manifestItems = Array.isArray(manifest) ? manifest : manifest.items;
+
+if (!Array.isArray(manifestItems)) {
+  throw new Error('Le manifeste des assets doit contenir un tableau "items".');
+}
 
 const slotMap = { location: 'lieu', base: 'base', tenue: 'tenue', coiffes: 'coiffe', coiffe: 'coiffe', visages: 'visage', visage: 'visage', accessoires: 'accessoire', accessoire: 'accessoire', cornes: 'cornes', chaussures: 'chaussures', queues: 'queue', queue: 'queue' };
 
-export const ITEMS = manifest.map((raw) => ({
+export const ITEMS = manifestItems.map((raw) => ({
   ...raw,
   slot: slotMap[raw.slot] ?? raw.slot,
   assetPath: path.resolve(here, '../assets', raw.dest),

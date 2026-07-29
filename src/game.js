@@ -10,11 +10,30 @@ export function petsOf(id){ return database().prepare('SELECT * FROM pets WHERE 
 export function activePet(id){ const p=database().prepare('SELECT * FROM pets WHERE user_id=? AND is_active=1').get(id); return p?applyDecay(p):null; }
 export function petById(id){ const p=database().prepare('SELECT * FROM pets WHERE id=?').get(id); return p?applyDecay(p):null; }
 function applyDecay(p){ const now=Date.now(),hours=Math.floor((now-p.last_stats_update)/3600000); if(hours<=0)return p; p.food=Math.max(0,p.food-hours*2); p.happiness=Math.max(0,p.happiness-hours); if(p.food<50||p.happiness<50)p.vitality=Math.max(0,p.vitality-Math.floor(hours/2)); p.last_stats_update+=hours*3600000; database().prepare('UPDATE pets SET food=?,happiness=?,vitality=?,last_stats_update=? WHERE id=?').run(p.food,p.happiness,p.vitality,p.last_stats_update,p.id); return p; }
-export function adopt(id,speciesId,starter=false){ const sp=SPECIES[speciesId]; if(!sp||sp.unavailable)return {ok:false,reason:'unavailable'}; ensureUser(id); const existing=database().prepare('SELECT 1 FROM pets WHERE user_id=? AND species_id=?').get(id,speciesId); if(existing)return {ok:false,reason:'owned'}; const count=database().prepare('SELECT COUNT(*) n FROM pets WHERE user_id=?').get(id).n; if(starter&&count>0)return {ok:false,reason:'started'}; if(!starter&&count===0)return {ok:false,reason:'start_first'}; if(!starter&&balanceChange(id,-sp.price,`adoption:${speciesId}`)===null)return {ok:false,reason:'funds'}; database().prepare('UPDATE pets SET is_active=0 WHERE user_id=?').run(id); const now=Date.now(),base=getBase(speciesId),loc=getDefaultLocation(); const r=database().prepare('INSERT INTO pets(user_id,species_id,name,adopted_at,last_stats_update,is_active,location_id,outfit_id) VALUES(?,?,?,?,?,1,?,?)').run(id,speciesId,sp.name,now,now,loc?.id??null,base?.id??null); grantDefaults(id,speciesId); return {ok:true,pet:petById(Number(r.lastInsertRowid)),balance:getUser(id).balance}; }
+export function adopt(id,speciesId,starter=false){ const sp=SPECIES[speciesId]; if(!sp||sp.unavailable)return {ok:false,reason:'unavailable'}; if(starter&&!sp.starter)return {ok:false,reason:'starter_only'}; ensureUser(id); const existing=database().prepare('SELECT 1 FROM pets WHERE user_id=? AND species_id=?').get(id,speciesId); if(existing)return {ok:false,reason:'owned'}; const count=database().prepare('SELECT COUNT(*) n FROM pets WHERE user_id=?').get(id).n; if(starter&&count>0)return {ok:false,reason:'started'}; if(!starter&&count===0)return {ok:false,reason:'start_first'}; if(!starter&&balanceChange(id,-sp.price,`adoption:${speciesId}`)===null)return {ok:false,reason:'funds'}; database().prepare('UPDATE pets SET is_active=0 WHERE user_id=?').run(id); const now=Date.now(),base=getBase(speciesId),loc=getDefaultLocation(); const r=database().prepare('INSERT INTO pets(user_id,species_id,name,adopted_at,last_stats_update,is_active,location_id,outfit_id) VALUES(?,?,?,?,?,1,?,?)').run(id,speciesId,sp.name,now,now,loc?.id??null,base?.id??null); grantDefaults(id,speciesId); return {ok:true,pet:petById(Number(r.lastInsertRowid)),balance:getUser(id).balance}; }
 export function setActive(id,petId){ const p=database().prepare('SELECT * FROM pets WHERE id=? AND user_id=?').get(petId,id); if(!p)return false; database().transaction(()=>{database().prepare('UPDATE pets SET is_active=0 WHERE user_id=?').run(id);database().prepare('UPDATE pets SET is_active=1 WHERE id=?').run(petId);})();return true; }
 export function rename(id,name){ const p=activePet(id); if(!p)return false; database().prepare('UPDATE pets SET name=? WHERE id=?').run(name,p.id);return true; }
-export function care(id,petId,type,express=false){ const p=petById(petId); if(!p||p.user_id!==id)return {ok:false,reason:'owner'}; const meta={food:['food','last_feed'],happiness:['happiness','last_hug'],vitality:['vitality','last_rest']}[type]; if(!meta)return {ok:false}; const [stat,last]=meta; if(p[stat]>=100)return {ok:false,reason:'full'}; const now=Date.now(); if(express){ const bal=balanceChange(id,-GAME.expressCost,`express:${type}`); if(bal===null)return {ok:false,reason:'funds'}; database().prepare(`UPDATE pets SET ${stat}=MIN(100,${stat}+?) WHERE id=?`).run(GAME.expressGain,p.id); return {ok:true,pet:petById(p.id),balance:bal}; }
- const remain=GAME.careCooldownMs-(now-p[last]); if(remain>0)return {ok:false,reason:'cooldown',remaining:remain}; let level=p.level,xp=p.xp+GAME.careXp; const needed=level*100; if(xp>=needed){xp-=needed;level++;} database().prepare(`UPDATE pets SET ${stat}=MIN(100,${stat}+?),${last}=?,level=?,xp=? WHERE id=?`).run(GAME.careGain,now,level,xp,p.id); return {ok:true,pet:petById(p.id)}; }
+function progression(p, gainedXp) {
+  let level=p.level,xp=p.xp+gainedXp;
+  while(xp>=level*100){xp-=level*100;level++;}
+  return {level,xp};
+}
+export function care(id,petId,type,express=false){
+ const p=petById(petId); if(!p||p.user_id!==id)return {ok:false,reason:'owner'};
+ const meta={food:['food','last_feed'],happiness:['happiness','last_hug'],vitality:['vitality','last_rest']}[type]; if(!meta)return {ok:false};
+ const [stat,last]=meta,full=p[stat]>=100,now=Date.now();
+ if(express){
+  if(full)return {ok:false,reason:'full'};
+  const bal=balanceChange(id,-GAME.expressCost,`express:${type}`); if(bal===null)return {ok:false,reason:'funds'};
+  const gainedXp=GAME.expressXp,{level,xp}=progression(p,gainedXp);
+  database().prepare(`UPDATE pets SET ${stat}=MIN(100,${stat}+?),level=?,xp=? WHERE id=?`).run(GAME.expressGain,level,xp,p.id);
+  return {ok:true,pet:petById(p.id),balance:bal,gainedXp};
+ }
+ const remain=GAME.careCooldownMs-(now-p[last]); if(remain>0)return {ok:false,reason:'cooldown',remaining:remain};
+ const gainedXp=type==='vitality'&&full?GAME.vitalityFullXp:GAME.careXp,{level,xp}=progression(p,gainedXp);
+ database().prepare(`UPDATE pets SET ${stat}=MIN(100,${stat}+?),${last}=?,level=?,xp=? WHERE id=?`).run(GAME.careGain,now,level,xp,p.id);
+ return {ok:true,pet:petById(p.id),gainedXp};
+}
 export function owned(id,itemId){ return Boolean(database().prepare('SELECT 1 FROM inventory WHERE user_id=? AND item_id=? AND quantity>0').get(id,itemId)); }
 export function buy(id,itemId){ const item=getItem(itemId); if(!item||!item.shopVisible)return {ok:false,reason:'unknown'}; if(owned(id,itemId))return {ok:false,reason:'owned'}; const bal=balanceChange(id,-item.price,`achat:${itemId}`); if(bal===null)return {ok:false,reason:'funds'}; database().prepare('INSERT INTO inventory(user_id,item_id,quantity) VALUES(?,?,1)').run(id,itemId); return {ok:true,item,balance:bal}; }
 export function ownedItems(id,species,slot){ return getOwnedCandidates(species,slot).filter(i=>owned(id,i.id)); }
