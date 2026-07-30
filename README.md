@@ -1,4 +1,4 @@
-# BalekPets V1.0
+# BalekPets V1.0.1
 
 Bot Discord Tamagotchi officiel de l’univers des Baleks.
 
@@ -6,7 +6,7 @@ Adoptez un BalekPet, prenez soin de lui, gagnez du Balekium en participant au se
 
 ## Version actuelle
 
-**BalekPets V1.0 — sortie officielle**
+**BalekPets V1.0.1 — correctif de visibilité et d’administration**
 
 - 3 espèces jouables : Cocobalek, Buffalek et Volpek
 - 70 éléments référencés dans le catalogue
@@ -14,6 +14,8 @@ Adoptez un BalekPet, prenez soin de lui, gagnez du Balekium en participant au se
 - images des animaux générées avec leur tenue et leur lieu actuels
 - données persistantes dans une base SQLite
 - compatibilité Node.js 20 et NorthHost
+- toutes les commandes répondent publiquement
+- `/admin-balekium` peut cibler un membre ou un rôle
 
 ## Commencer à jouer
 
@@ -35,12 +37,12 @@ Les autres espèces s’obtiennent ensuite à **l’Élevage de Juju & Miky**.
 | `/commencer` | Créer son élevage et choisir son premier animal | Publique |
 | `/animal` | Afficher et gérer son animal actif | Publique |
 | `/profil [membre]` | Consulter sa collection ou celle d’un membre | Publique |
-| `/elevage` | Ouvrir l’Élevage de Juju & Miky | Privée |
-| `/pink` | Ouvrir la boutique Pink Studio | Privée |
-| `/journalier` | Recevoir la prime quotidienne de 200 Balekium | Privée |
-| `/balekium` | Consulter son solde | Privée |
-| `/renommer` | Renommer son animal actif | Privée |
-| `/admin-balekium` | Définir le solde d’un membre | Privée, permission Gérer le serveur |
+| `/elevage` | Ouvrir l’Élevage de Juju & Miky | Publique |
+| `/pink` | Ouvrir la boutique Pink Studio | Publique |
+| `/journalier` | Recevoir la prime quotidienne de 200 Balekium | Publique |
+| `/balekium` | Consulter son solde | Publique |
+| `/renommer` | Renommer son animal actif | Publique |
+| `/admin-balekium` | Définir le solde d’un membre ou d’un rôle | Publique, permission Gérer le serveur |
 
 Les anciennes commandes en double `/adopter` et `/pink-studio` ont été retirées.
 
@@ -119,7 +121,7 @@ La nourriture, le bonheur et la vitalité diminuent progressivement avec le temp
 - délai entre deux récompenses de message ;
 - prime `/journalier` de 200 Balekium toutes les 24 heures ;
 - achats enregistrés dans l’inventaire ;
-- commande administrateur pour corriger un solde.
+- commande administrateur pour corriger le solde d’un membre ou de tous les membres humains d’un rôle.
 
 ## Installation
 
