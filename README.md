@@ -15,7 +15,7 @@ Adoptez un BalekPet, prenez soin de lui, gagnez du Balekium en participant au se
 - données persistantes dans une base SQLite
 - compatibilité Node.js 20 et NorthHost
 - toutes les commandes répondent publiquement
-- `/admin-balekium` peut cibler un membre ou un rôle
+- `/admin-balekium` peut ajouter ou retirer du Balekium à un membre ou à tous les membres humains d’un rôle
 
 ## Commencer à jouer
 
@@ -42,7 +42,7 @@ Les autres espèces s’obtiennent ensuite à **l’Élevage de Juju & Miky**.
 | `/journalier` | Recevoir la prime quotidienne de 200 Balekium | Publique |
 | `/balekium` | Consulter son solde | Publique |
 | `/renommer` | Renommer son animal actif | Publique |
-| `/admin-balekium` | Définir le solde d’un membre ou d’un rôle | Publique, permission Gérer le serveur |
+| `/admin-balekium` | Ajouter ou retirer du Balekium à un membre ou à un rôle | Publique, permission Gérer le serveur |
 
 Les anciennes commandes en double `/adopter` et `/pink-studio` ont été retirées.
 
@@ -121,7 +121,8 @@ La nourriture, le bonheur et la vitalité diminuent progressivement avec le temp
 - délai entre deux récompenses de message ;
 - prime `/journalier` de 200 Balekium toutes les 24 heures ;
 - achats enregistrés dans l’inventaire ;
-- commande administrateur pour corriger le solde d’un membre ou de tous les membres humains d’un rôle.
+- commande administrateur pour ajouter ou retirer un montant sans uniformiser les soldes ;
+- chaque opération indique publiquement l’administrateur, la cible et le montant, et reste enregistrée dans l’historique des transactions.
 
 ## Installation
 
